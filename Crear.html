@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" type="./imagen3060sociedades+.pnj" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sociedades360</title>
+    <meta charset="UTF-8"> <title>WhatsApp Icon</title> <!-- Enlace a Font Awesome desde CDN --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tipografía elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-ka7e6i5eOg2X3JPL40fGfkqYNPpd5F3sK0rqppsYAz16U38R8qiu8cR+3jG3GPT8Jl7A+0QSS7w7Ha7QOYObTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+    <a href="index.html" class="logo">
+        <img src="./360sociedad.jpg" alt="Sociedades360 logo">
+    </a>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="Crear.html">Crear sociedades</a></li>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+
+    <a href="contacto.html" class="btn-agendar">Agendar consulta</a>
+</nav>
+    <main>
+        <div class="form-wrapper">
+        <h1>¿Querés cotizar tu sociedad?</h1>
+        <p>Completá este formulario y recibí en minutos una cotización preliminar para constituir tu sociedad.</p>
+
+        <div id="step1" class="step active">
+            <h2>PASO 1 DE 3 – Definición Societaria</h2>
+            <div>
+                <strong>Tipo de sociedad</strong>
+                <div class="options" id="society-options">
+                    <div class="option" data-value="SAS">S.A.S.<br><small>Ideal emprendedores digitales.</small></div>
+                    <div class="option" data-value="SRL">S.R.L.<br><small>PyME clásica y familiar.</small></div>
+                    <div class="option" data-value="SA">S.A.<br><small>Estructura corporativa.</small></div>
+                </div>
+            </div>
+            <div style="margin-top:30px;">
+                <strong>Jurisdicción</strong>
+                <div class="options" id="jurisdiction-options">
+                    <div class="option" data-value="CABA">CABA<br><small>IGJ (Capital Federal)</small></div>
+                    <div class="option" data-value="PBA">PBA<br><small>DPPJ (Provincia Bs. As.)</small></div>
+                </div>
+            </div>
+            <div class="buttons"><span></span><button class="btn-next" onclick="nextStep()" disabled id="toStep2">Continuar</button></div>
+        </div>
+
+        <div id="step2" class="step">
+            <h2>PASO 2 DE 3 – Dimensionamiento</h2>
+            <label>Capital social (estimado)</label>
+            <input type="text" id="capital" placeholder="$ 0">
+            <div id="capitalHelp" style="margin-top:10px; padding:12px; border-radius:12px; border:1px solid rgba(216,178,98,.25); background:rgba(216,178,98,.06);">
+  <div id="capitalMinText" style="font-weight:700;"></div>
+  <div id="capitalWarnText" style="margin-top:6px; opacity:.9;"></div>
+</div>
+            <label>Actividad principal</label>
+            <input type="text" id="activity" placeholder="Ej: Servicios de software, Construcción...">
+            <div style="margin-top:20px;">
+                <strong>Detalles operativos</strong>
+                <label><input type="checkbox" id="hasEmployees"> ¿Contratará empleados?</label>
+                <label><input type="checkbox" id="hasComex"> ¿Operaciones Comex?</label>
+            </div>
+            <div class="buttons"><button class="btn-prev" onclick="prevStep()">Atrás</button><button class="btn-next" onclick="nextStep2()" id="toStep3" disabled>Continuar</button></div>
+        </div>
+
+        <div id="step3" class="step">
+            <h2>PASO 3 DE 3 – Envío Seguro</h2>
+            <label>Tu nombre completo</label>
+            <input type="text" id="userName" class="form-input" placeholder="Nombre y apellido">
+            <label>Teléfono / WhatsApp</label>
+            <input type="tel" id="userPhone" class="form-input" placeholder="+54 9 11 xxxx-xxxx">
+            <label>Email</label>
+            <input type="email" id="userEmail" class="form-input" placeholder="tu@email.com">
+            <label>Resumen a enviar</label>
+            <textarea id="summary" readonly></textarea>
+            <button id="sendBtn" type="button" class="btn-prev">Solicitar Cotización</button>
+        </div> <!-- end form-wrapper -->
+    </main>
+
+    <!-- Botón WhatsApp Flotante -->
+  <a href="https://wa.me/5491159203177?text=Hola%2C%20estoy%20contactando%20desde%20la%20pagina%20web%20y%20quisiera%20hacer%20una%20consulta." class="whatsapp-btn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><a href="tel:+541159203177">+54 (11) 5920-3177</a></p>
+                <p><a href="mailto:Sociedades360@gmail.com">Sociedades360@gmail.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div style="display: flex; gap: 12px; justify-content: center; margin-top: 12px;">
+                    
+                    <a href="https://instagram.com/sociedades360" target="_blank" class="footer-social" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="footer-social" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/5491159203177" target="_blank" class="footer-social" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2026 Sociedades360. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+<script>
+/* =========================
+   CONFIG
+========================= */
+const MI_NUMERO  = "5491159203177"; // WhatsApp destino (sin +)
+
+// Mínimos legales / operativos (AJUSTÁ SI CAMBIA)
+const MIN_CAPITAL = {
+  CABA: { SAS: 704800, SRL: 300000, SA: 30000000 },
+  PBA:  { SAS: 704800, SRL: 300000, SA: 30000000 }
+};
+
+/* =========================
+   STATE
+========================= */
+let data = {
+  society: "",
+  jurisdiction: "",
+  capital: "",
+  activity: "",
+  employees: false,
+  comex: false,
+  name: ""
+};
+
+/* =========================
+   HELPERS
+========================= */
+function fmt(n){ return new Intl.NumberFormat("es-AR").format(n); }
+function parseCapital(){
+  const raw = document.getElementById("capital").value.replace(/\D/g,"");
+  return raw ? parseInt(raw,10) : 0;
+}
+function getMinCapital(){
+  const j = data.jurisdiction;
+  const s = data.society;
+  if(!j || !s) return 0;
+  return (MIN_CAPITAL[j] && MIN_CAPITAL[j][s]) ? MIN_CAPITAL[j][s] : 0;
+}
+
+/* =========================
+   STEP 1
+========================= */
+function enableNext1(){
+  document.getElementById("toStep2").disabled = !(data.society && data.jurisdiction);
+}
+
+document.querySelectorAll("#society-options .option").forEach(el=>{
+  el.addEventListener("click", ()=>{
+    document.querySelectorAll("#society-options .option").forEach(o=>o.classList.remove("selected"));
+    el.classList.add("selected");
+    data.society = el.dataset.value;
+    enableNext1();
+    updateCapitalUI();
+    setCapitalToMinIfEmpty();
+    checkStep2();
+  });
+});
+
+document.querySelectorAll("#jurisdiction-options .option").forEach(el=>{
+  el.addEventListener("click", ()=>{
+    document.querySelectorAll("#jurisdiction-options .option").forEach(o=>o.classList.remove("selected"));
+    el.classList.add("selected");
+    data.jurisdiction = el.dataset.value;
+    enableNext1();
+    updateCapitalUI();
+    setCapitalToMinIfEmpty();
+    checkStep2();
+  });
+});
+
+function nextStep(){
+  document.getElementById("step1").classList.remove("active");
+  document.getElementById("step2").classList.add("active");
+  updateCapitalUI();
+  setCapitalToMinIfEmpty();
+  checkStep2();
+}
+
+function prevStep(){
+  if(document.getElementById("step3").classList.contains("active")){
+    document.getElementById("step3").classList.remove("active");
+    document.getElementById("step2").classList.add("active");
+  } else if(document.getElementById("step2").classList.contains("active")){
+    document.getElementById("step2").classList.remove("active");
+    document.getElementById("step1").classList.add("active");
+  }
+}
+
+/* =========================
+   STEP 2 - CAPITAL UI + VALIDATION
+========================= */
+function updateCapitalUI(){
+  const minText = document.getElementById("capitalMinText");
+  const warnText = document.getElementById("capitalWarnText");
+  if(!minText || !warnText) return;
+
+  if(!data.society || !data.jurisdiction){
+    minText.textContent = "Seleccioná tipo societario y jurisdicción para ver el mínimo aplicable.";
+    warnText.textContent = "";
+    warnText.style.color = "rgba(232,237,247,.85)";
+    return;
+  }
+
+  const min = getMinCapital();
+  const cap = parseCapital();
+
+  if(min <= 0){
+    minText.textContent = "Mínimo legal: no configurado.";
+    warnText.textContent = "Cargá el mínimo correspondiente en el script (MIN_CAPITAL).";
+    warnText.style.color = "#ffb3b3";
+    return;
+  }
+
+  minText.textContent = `Mínimo legal aplicable: $ ${fmt(min)}`;
+
+  if(cap === 0){
+    warnText.textContent = "Ingresá un capital estimado (podés usar el mínimo como referencia).";
+    warnText.style.color = "rgba(232,237,247,.85)";
+    return;
+  }
+
+  if(cap < min){
+    warnText.textContent = `El capital ingresado está por debajo del mínimo. Debe ser al menos $ ${fmt(min)}.`;
+    warnText.style.color = "#ffb3b3";
+  } else {
+    warnText.textContent = "OK. El capital cumple el mínimo.";
+    warnText.style.color = "#b7f3c6";
+  }
+}
+
+function setCapitalToMinIfEmpty(){
+  const min = getMinCapital();
+  if(min <= 0) return;
+
+  const input = document.getElementById("capital");
+  const current = input.value.replace(/\D/g,"");
+  if(current.length > 0) return;
+
+  input.value = fmt(min);
+}
+
+function checkStep2(){
+  const act = document.getElementById("activity").value.trim();
+  const cap = parseCapital();
+  const min = getMinCapital();
+
+  const okCapital = (cap > 0) && (min <= 0 || cap >= min);
+  document.getElementById("toStep3").disabled = !(okCapital && act.length > 0);
+
+  updateCapitalUI();
+}
+
+/* Formateo miles capital */
+const capitalInput = document.getElementById("capital");
+capitalInput.addEventListener("input", (e)=>{
+  const digits = e.target.value.replace(/\D/g,"");
+  e.target.value = digits ? fmt(parseInt(digits,10)) : "";
+  checkStep2();
+});
+
+/* Listeners paso 2 */
+document.getElementById("activity").addEventListener("input", checkStep2);
+document.getElementById("hasEmployees").addEventListener("change", checkStep2);
+document.getElementById("hasComex").addEventListener("change", checkStep2);
+
+/* =========================
+   STEP 3 - SUMMARY + SEND
+========================= */
+function nextStep2(){
+  data.capital   = document.getElementById("capital").value;
+  data.activity  = document.getElementById("activity").value;
+  data.employees = document.getElementById("hasEmployees").checked;
+  data.comex     = document.getElementById("hasComex").checked;
+
+  const min = getMinCapital();
+
+  let text = `Hola Consultores! Quisiera solicitar una cotización para la constitución de una sociedad:\n`;
+  text += `* Tipo societario: ${data.society}.\n`;
+  text += `* Sede social: ${data.jurisdiction}.\n`;
+  text += `* Capital inicial: $ ${data.capital}.\n`;
+  if(min > 0) text += `* Mínimo legal aplicable: $ ${fmt(min)}.\n`;
+  text += `* Actividad: ${data.activity}.\n`;
+  text += `* Empleados: ${data.employees ? "Sí" : "No"}.\n`;
+  text += `* COMEX: ${data.comex ? "Sí" : "No"}.\n\n`;
+  text += `Soy ${data.name || ""}... Muchas gracias!`;
+
+  document.getElementById("summary").value = text;
+
+  document.getElementById("step2").classList.remove("active");
+  document.getElementById("step3").classList.add("active");
+
+  updateSendLink();
+}
+
+document.getElementById("userName").addEventListener("input", (e)=>{
+  data.name = e.target.value;
+
+  const summaryEl = document.getElementById("summary");
+  if(!summaryEl.value) return;
+
+  const lines = summaryEl.value.split("\n").filter(l => !l.startsWith("Soy "));
+  lines.push("");
+  lines.push(`Soy ${data.name || ""}... Muchas gracias!`);
+  summaryEl.value = lines.join("\n").replace(/\n\n\n/g, "\n\n");
+
+  updateSendLink();
+});
+
+/* =========================
+   GOOGLE SHEETS SAVE (BEACON)
+========================= */
+const SHEETS_URL = "https://script.google.com/macros/s/AKfycbwP9FmcBtRq-Snp2h9Tq7tZcPDFfrbIjWkBJs7Q74PMor6nomaKr2OrGMxYk-dywzKagw/exec";
+
+function guardarLeadEnSheets(){
+  const params = new URLSearchParams({
+    society: data.society,
+    jurisdiction: data.jurisdiction,
+    capital: document.getElementById("capital").value,
+    activity: document.getElementById("activity").value,
+    employees: document.getElementById("hasEmployees").checked ? "true" : "false",
+    comex: document.getElementById("hasComex").checked ? "true" : "false",
+    name: document.getElementById("userName").value || "",
+    phone: document.getElementById("userPhone").value || "",
+    email: document.getElementById("userEmail").value || "",
+    status: "Nuevo",
+    origin: "cotizador_web",
+    t: Date.now().toString()
+  });
+
+  new Image().src = SHEETS_URL + "?" + params.toString();
+}
+
+/* =========================
+   WHATSAPP LINK
+========================= */
+function updateSendLink(){
+  const btn = document.getElementById("sendBtn");
+  if(!btn) return;
+
+  btn.type = "button"; // evita submit
+
+  const msg = encodeURIComponent(document.getElementById("summary").value);
+  const waUrl = `https://wa.me/${MI_NUMERO}?text=${msg}`;
+
+  btn.onclick = (e) => {
+    e.preventDefault();
+
+    guardarLeadEnSheets(); // 1) guarda
+
+    setTimeout(() => {
+      window.open(waUrl, "_blank"); // 2) abre WhatsApp (usa waUrl, no "url")
+    }, 150);
+  };
+}
+
+const menuToggle = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+
+</script>
+</body>
+</html>

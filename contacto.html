@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - Sociedades360</title>
+    <meta charset="UTF-8"> <title>WhatsApp Icon</title> <!-- Enlace a Font Awesome desde CDN --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tipografía elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-ka7e6i5eOg2X3JPL40fGfkqYNPpd5F3sK0rqppsYAz16U38R8qiu8cR+3jG3GPT8Jl7A+0QSS7w7Ha7QOYObTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+    <a href="index.html" class="logo">
+        <img src="./360sociedad.jpg" alt="Sociedades360 logo">
+    </a>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="Crear.html">Crear sociedades</a></li>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+
+    <a href="contacto.html" class="btn-agendar">Agendar consulta</a>
+</nav>
+    
+    <!-- Hero Contacto -->
+    <section class="hero-contacto">
+        <div class="hero-contacto-content">
+            <h1>Contactanos</h1>
+            <p>¿Tienes preguntas? Nos encantaría escucharte. Completa el formulario o comunícate directamente.</p>
+        </div>
+    </section>
+    
+    <!-- Sección de Contacto -->
+    <section class="seccion-contacto">
+        <div class="container-seccion">
+            <div class="contacto-grid">
+                <!-- Formulario -->
+                <div class="formulario-contacto">
+                    <h2>Envíanos tu consulta</h2>
+                    <form id="formContacto" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Teléfono / WhatsApp</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 XXXX-XXXX">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="asunto">Asunto *</label>
+                            <input type="text" id="asunto" name="asunto" placeholder="¿Sobre qué es tu consulta?" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="consulta">Mensaje *</label>
+                            <textarea id="consulta" name="consulta" rows="6" placeholder="Cuéntanos más detalles sobre tu consulta..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label style="display: flex; align-items: center; font-weight: 400;">
+                                <input type="checkbox" id="privacidad" name="privacidad" required style="width: auto; margin-right: 10px;">
+                                <span>Acepto la política de privacidad y términos de servicio</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn-enviar">Enviar consulta por WhatsApp</button>
+                        <p class="aviso-whatsapp">Al enviar, se abrirá WhatsApp con tu mensaje listo para enviar. No compartimos tus datos con terceros.</p>
+                    </form>
+                </div>
+                
+                <!-- Información de Contacto -->
+                <div class="info-contacto">
+                    <h2>Información de Contacto</h2>
+                    
+                    <div class="info-bloque">
+                        <h3><i class="fas fa-map-marker-alt" style="color: var(--color-gold); margin-right: 10px;"></i>Ubicación</h3>
+                        <p>Capital Federal, Buenos Aires<br>Argentina</p>
+                    </div>
+                    
+                    <div class="info-bloque">
+                        <h3><i class="fas fa-phone" style="color: var(--color-gold); margin-right: 10px;"></i>Teléfono</h3>
+                        <p><a href="tel:+541159203177" class="contact-link">+54 (11) 5920-3177</a></p>
+                    </div>
+                    
+                    <div class="info-bloque">
+                        <h3><i class="fas fa-envelope" style="color: var(--color-gold); margin-right: 10px;"></i>Email</h3>
+                        <p><a href="mailto:Sociedades360@gmail.com" class="contact-link">Sociedades360@gmail.com</a></p>
+                    </div>
+                    
+                    <div class="info-bloque">
+                        <h3><i class="fas fa-clock" style="color: var(--color-gold); margin-right: 10px;"></i>Horarios</h3>
+                        <p><strong>Lunes - Viernes:</strong> 9:00 - 18:00 hs<br>
+                        <strong>Sábados:</strong> Por consulta<br>
+                        <strong>Domingos:</strong> Cerrado</p>
+                    </div>
+                    
+                    <div class="info-bloque redes-sociales">
+                        <h3><i class="fas fa-share-alt" style="color: var(--color-gold); margin-right: 10px;"></i>Síguenos</h3>
+                        <div style="display: flex; gap: 15px; margin-top: 15px; justify-content: center; flex-wrap: wrap;">
+                            <a href="https://instagram.com/sociedades360" target="_blank" class="footer-social" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="footer-social" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://wa.me/5491159203177"" target="_blank" class="footer-social" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Mapa -->
+    <section class="seccion-mapa">
+        <div class="container-seccion">
+            <h2>Ubicación</h2>
+            <div class="mapa-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.88127690609!2d-58.38231592346843!3d-34.60368097024253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335ee8e7c2f3d%3A0xc87c7c7c7c7c7c7c!2sCABA%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1708876543210" width="100%" height="500" style="border:none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA para Crear Sociedad -->
+    <section class="seccion-cta-contacto">
+        <div class="container-seccion">
+            <h2>¿Listo para comenzar tu trámite?</h2>
+            <p>Si ya tienes clara tu consulta, puedes iniciar el proceso de cotización directamente.</p>
+            <a href="Crear.html" class="btn-primary" style="display: inline-block; padding: 15px 50px; text-decoration: none; border-radius: 25px; font-weight: bold; margin-top: 20px;">Iniciar Cotización</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p><a href="tel:+541159203177">+54 (11) 5920-3177</a></p>
+                <p><a href="mailto:Sociedades360@gmail.com">Sociedades360@gmail.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div style="display: flex; gap: 12px; justify-content: center; margin-top: 12px;">
+                    
+                    <a href="https://instagram.com/sociedades360" target="_blank" class="footer-social" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="footer-social" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/5491159203177" target="_blank" class="footer-social" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p>&copy; 2026 Sociedades360. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+<script>
+
+const MI_NUMERO = "5491159203177"; // PONÉ TU NÚMERO AQUÍ
+
+function handleSubmit(event) {
+
+    event.preventDefault();
+
+    const btn = document.querySelector("#formContacto .btn-enviar");
+    const oldText = btn.textContent;
+
+    btn.disabled = true;
+    btn.textContent = "Abriendo WhatsApp...";
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const asunto = document.getElementById("asunto").value.trim();
+    const consulta = document.getElementById("consulta").value.trim();
+
+    const texto = `📩 NUEVA CONSULTA WEB
+
+👤 Nombre: ${nombre}
+📧 Email: ${email}
+📱 Teléfono: ${telefono || "-"}
+📌 Asunto: ${asunto}
+
+📝 Consulta:
+${consulta}`;
+
+    const url = `https://api.whatsapp.com/send?phone=${MI_NUMERO}&text=${encodeURIComponent(texto)}`;
+
+    window.open(url, "_blank");
+
+    setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = oldText;
+    }, 1200);
+
+}
+const menuToggle = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+</script>
+</body>
+</html>
